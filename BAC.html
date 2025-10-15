@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Moyenne de BAC</title>
+    <link rel="stylesheet" href="CSS/style-bac.css">
+    <link rel="shortcut icon" href="image/encre.ico" >
+</head>
+
+<body>
+    <a href="index.html" class="home">MENU :</a>
+    
+    <div class="title">
+        <h1>Calculez votre Moyenne au Baccalauréat Général</h1>
+    </div>
+
+    <table width="100%">
+        <tr>
+            <td width="50%"><div class="content">
+                <h3>Contrôle Continu</h3>
+                <table>
+                    <tr width="100%">
+                        <td>
+                            <p>Matières :</p>
+                        </td><td>
+                            <p>Première</p>
+                        </td><td>
+                            <p>Terminal</p>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Langue Vivante n°1 :</p>
+                        </td><td>
+                            <input type="number" id="LVA1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="LVAT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Langue Vivante n°2 :</p>
+                        </td><td>
+                            <input type="number" id="LVB1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="LVBT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Histoire Géographie :</p>
+                        </td><td>
+                            <input type="number" id="HG1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="HGT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Enseignement Moral et Civic :</p>
+                        </td><td>
+                            <input type="number" id="EMC1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="EMCT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Enseignement Scientifique :</p>
+                        </td><td>
+                            <input type="number" id="ES1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="EST" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Enseignement Physique et Sportif :</p>
+                        </td><td>
+                            <p>Seulement en classe de Terminal</p>
+                        </td><td>
+                            <input type="number" id="EPST" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Spécialité arrété en classe de Première :</p>
+                        </td><td>
+                            <input type="number" id="SPE11" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <p>Seulement en classe de Première</p>
+                        </td>
+                    </tr>
+                </table>
+            </div></td>
+            
+            <td><div class="content">
+                <h3>Epreuves</h3>
+                <table>
+                    <tr width="100%">
+                        <td>
+                            <p>Matières :</p>
+                        </td><td>
+                           <p>Première</p>
+                        </td><td>
+                            <p>Terminal</p>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Ecrit de Français :</p>
+                        </td><td>
+                            <input type="number" id="FRE" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <p>Seulement en classe de Première</p>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Oral de Français :</p>
+                        </td><td>
+                            <input type="number" id="FRO" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <p>Seulement en classe de Première</p>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Philosohie :</p>
+                        </td><td>
+                            <p>Seulement en classe de Terminale</p>
+                        </td><td>
+                            <input type="number" id="PH" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Grand Oral :</p>
+                        </td><td>
+                            <p>Seulement en classe de Terminal</p>
+                        </td><td>
+                            <input type="number" id="GO" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Spécialité n°1 :</p>
+                        </td><td>
+                            <p>Seulement en classe de Terminal</p>
+                        </td><td>
+                            <input type="number" id="SPE1T" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>*Spécialité n°2 :</p>
+                        </td><td>
+                            <p>Seulement en classe de Terminal</p>
+                        </td><td>
+                            <input type="number" id="SPE2T" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr>
+                </table>
+            </div></td>  
+        </tr>
+
+        <tr>
+            <td width="50%"><div class="content">
+                <h3>Options</h3>
+                <table>
+                    <tr width="100%">
+                        <td width="50%">
+                            <p>Matières :</p>
+                        </td><td>
+                            <p>Première</p>
+                        </td><td>
+                            <p>Terminal</p>
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>Grec :</p>
+                        </td><td>
+                            <input type="number" id="GR1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="GRT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>Latin :</p>
+                        </td><td>
+                            <input type="number" id="L1" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="LT" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>Option n°1 :</p>
+                        </td><td>
+                            <input type="number" id="O11" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="O1T" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <p>Option n°2 :</p>
+                        </td><td>
+                            <input type="number" id="O21" min=0 max=20 onchange="BAC()">
+                        </td><td>
+                            <input type="number" id="O2T" min=0 max=20 onchange="BAC()">
+                        </td>
+                    </tr>
+                </table>
+            </div></td>
+            <td><div class="content">
+                <h3> MOYENNE :</h3>
+                <h1 id="sortie">./20</h1>
+                <h2 id="mention"></h2>
+                <a id="resultat"></a>
+                <a id="stop"></a>
+                <p>* : Matières Obligatoires</p>
+            </div></td>
+        </tr>
+    </table>
+
+    <script src="JS/js-bac.js"></script>
+
+    <div class="bottombar">
+        <p>Site réalisé par DAILLIARD Maxence</p>
+    </div>
+</body>
+</html>

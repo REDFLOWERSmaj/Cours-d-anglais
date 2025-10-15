@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul et Décomposition</title>
+    <link rel="stylesheet" href="CSS/style-cetd.css">
+</head>
+
+<body>
+    <a href="index.html" class="home">MENU :</a>
+    
+
+    <div class="title">
+        <h1>Calculateur et Décomposeur</h1>
+    </div>
+
+
+	<div class="content1">
+        <h1>Calculateur :</h1>
+        <p>Entrez le calcul que vous souhaitez effectuer</p>
+        <input type="text" id="inputExpressionc">
+        <button onclick="calculer()">Calculer</button>
+        <p>Résultat :</p>
+        <div class="result" id="resultc"></div>
+        <p>Informations pour les calculs <button onclick="infcalculer()">+</button><button onclick="sup()">-</button></p>
+        <div class="info" id="infocalculer"></div>
+    </div>
+
+
+    <div class="content1">
+        <h1>Décomposeur :</h1>
+        <p>Entrez un nombre à décomposer en produit de facteurs premiers:</p>
+        <input type="number" id="nombre_depart">
+        <button onclick="Decomposer()">Décomposer</button>
+        <p>Résultat :</p>
+        <div class="result" id="resultat"></div>
+    </div>
+        <script>
+            function Decomposer(){
+                const nombre_depart = document.getElementById("nombre_depart").value;
+                const resultat = document.getElementById("resultat");
+                const nombre = nombre_depart
+
+                if (nombre != parseInt(nombre)) {
+                    resultat.innerHTML = "Veuillez entrer un nombre entier.";
+                    return
+                }
+                if (nombre <= 1){
+                    resultat.innerHTML = "Veuillez entrer un nombre supérieur à 1.";
+                    return
+                }
+                var decomposition = [];
+                var facteur = 2;
+                var valeur = nombre;
+                while (valeur > 1){
+                    if (valeur % facteur === 0) {
+                        decomposition.push(facteur);
+                        valeur /= facteur;
+                    }
+                    else{
+                        facteur++
+                    }
+                }
+                resultat.innerHTML = "La décomposition en produit de facteurs premiers du nombre " + nombre_depart + " est : " + decomposition.join("*");
+                
+            }
+
+            function calculer() {
+                const inputExpressionc = document.getElementById("inputExpressionc").value;
+                const resultc = document.getElementById("resultc");
+                try {
+                    const resultat = eval(inputExpressionc);
+                    if (isNaN(resultat)) {
+                        resultc.innerHTML = "L'expression n'est pas valide.";
+                    } 
+                    else {
+                        resultc.innerHTML = "Le résultat du Calcul "+ inputExpressionc + " est égal à " + resultat;
+                    }
+                } 
+                catch (error) {
+                    resultc.innerHTML = "Une erreur est survenue lors du calcul : " + error.message;
+                }
+            }
+
+            function infcalculer(){
+                const showc = document.getElementById("infocalculer");
+                var util = 0
+                    if (util != 0){
+                        showc.innerHTML = ""
+                        var util = 0
+                    }
+                    else {
+                        showc.innerHTML = "Information pour calculer :<br/> Pensez à utiliser des parenthèses pour les calculs de priorité <br/> Addition : + <br/> Soustraction : - <br/> Multiplication : * <br/> Division : / <br/> Puissance de 10 : E <br/>";
+                        var util = 1
+                    }
+                //a revoir pour la fonction de retirer le les infos
+            }
+            function sup(){
+
+                const showc = document.getElementById("infocalculer");
+                showc.innerHTML = ""
+            }
+        </script> 
+    <div class="bottombar">
+        <p>Site réalisé par DAILLIARD Maxence</p>
+    </div>
+</body>
+</html>
